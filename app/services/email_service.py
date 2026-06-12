@@ -71,7 +71,6 @@ class EmailService:
 
         # --------------------------------------------------
         # Sentiment Trend Layer
-        # (Current email only. Later we'll pass thread history.)
         # --------------------------------------------------
 
         sentiment_trend = sentiment_trend_service.analyze(
