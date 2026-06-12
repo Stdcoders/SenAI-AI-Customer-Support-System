@@ -173,7 +173,3 @@ npm run dev
 * Real-time notifications
 
 ---
-
-## Author
-
-Developed as part of an AI Powered Customer Support System technical assessment demonstrating FastAPI, React, Retrieval-Augmented Generation, Autonomous ReAct Agents, and layered software architecture.
