@@ -1,0 +1,80 @@
+openapi: 3.0.3
+
+info:
+  title: SenAI API
+  version: 1.0.0
+  description: AI Powered Customer Support System
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+
+  /api/ingest:
+    post:
+      summary: Ingest Email
+      responses:
+        "202":
+          description: Email accepted
+
+  /api/status/{job_id}:
+    get:
+      summary: Get Processing Status
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Processing Status
+
+  /dashboard/stats:
+    get:
+      summary: Dashboard Statistics
+      responses:
+        "200":
+          description: Statistics
+
+  /threads/{contact_email}:
+    get:
+      summary: Conversation Thread
+      parameters:
+        - name: contact_email
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Thread History
+
+  /respond/{email_id}:
+    post:
+      summary: Send AI Draft Response
+      parameters:
+        - name: email_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Response Sent
+
+  /rag/search:
+    get:
+      summary: Knowledge Search
+
+  /agent/dry-run/{email_id}:
+    post:
+      summary: Agent Reasoning Trace
+
+  /analytics/sentiment-trend:
+    get:
+      summary: Sentiment Trend
+
+  /analytics/category-breakdown:
+    get:
+      summary: Category Breakdown
